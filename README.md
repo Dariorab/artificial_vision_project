@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ```
 
 Download the weights of the PAR model from the following link:
-[Download Weights](https://drive.google.com/drive/u/1/folders/1-TtZmkiNiRreebRfynGHOwAR9WUIlt-I)
+[Download Weights](https://drive.google.com/file/d/1AjH-RlhfxMVpTJfsasAFuB0Ww8DYvgA0/view?usp=drive_link)
 
 `yolov8m` and `osnet` weights can be dowloaded from their official site.
 
