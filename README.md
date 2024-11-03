@@ -1,6 +1,17 @@
 # Artificial Vision Project
 ## Introduction
+This project aims to develop an artificial vision system for tracking individuals in a scene 
+and analyzing their behaviors. The system will assign unique identifiers to each person 
+for consistent tracking over time. It will monitor interactions within specified Regions of Interest (ROIs), 
+as defined in a JSON configuration file, and assess how often individuals enter these areas 
+and the duration of their presence.
 
+Additionally, the system will classify key attributes for each person, including gender, 
+the presence of a bag or backpack, the presence of a hat, and the colors of their upper and lower clothing. 
+This approach provides valuable insights into individual behaviors and characteristics, 
+making the system useful for applications in surveillance, retail analytics, and public safety.
+
+_**More details about choosen made can be found in the `report.pdf` file.**_
 
 ## Authors and Acknowledgment
 Project contributors:
@@ -81,36 +92,35 @@ Notes:
 **Arguments**:
 * `--batch_size` batch size of the testing.
 
-## Content
+# Content
 The project is divided into the following parts:
 
-### Multi-Task network
+## Multi-Task network
 The network is used for **PAR** (Pedestrian Attribute Recognition). 
 It is composed of two files:
 * `classification_head.py` contains the class for implementing single head.
 * `multi_task_network.py` contains the class for implementing the multi-task network
 which is composed of 5 heads.
 
-### Object Detection and Re-Identification
+## Object Detection and Re-Identification
 The object detection and re-identification tasks are handled in the `main.py` file, 
 utilizing the YOLO model for object detection and the OSNet architecture 
 for person re-identification.
 
-### Dataset
+## Dataset
 The first step regards to creation of correct annotations
 for the dataset and remove those images that don't contain all the attributes.
 After that, the dataloaders are created using the `Dataset` class 
 in the `mivia_dataset.py` file.
 
-### Training
+## Training
 In the `training.py` file, you will find the complete code structure 
 for training a multi-task neural network using GradNorm as the loss function
 
-### Testing
+## Testing
 In the `test.py` file, you can find the code for testing PAR model.
 
-### More Details
-more details about choosen made can be found in the `report.pdf` file.
+
 
 
 
