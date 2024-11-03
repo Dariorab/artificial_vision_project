@@ -11,7 +11,7 @@ the presence of a bag or backpack, the presence of a hat, and the colors of thei
 This approach provides valuable insights into individual behaviors and characteristics, 
 making the system useful for applications in surveillance, retail analytics, and public safety.
 
-_**More details about choosen made can be found in the `report.pdf` file.**_
+_**More details about the choices made can be found in the `report.pdf` file.**_
 
 ## Authors and Acknowledgment
 Project contributors:
@@ -81,7 +81,7 @@ Notes:
 If you want to test the model, you can run the following command:
 
 ```bash
-python test.py
+python test.py --batch_size 128
 ```
 
 Notes:
@@ -118,7 +118,8 @@ In the `training.py` file, you will find the complete code structure
 for training a multi-task neural network using GradNorm as the loss function
 
 ## Testing
-In the `test.py` file, you can find the code for testing PAR model.
+In the test.py file, you will find the code for testing the multi-task model. 
+The metrics results are reported in the report.pdf file.
 
 
 
