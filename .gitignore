@@ -2,3 +2,4 @@
 models/*
 configuration/*
 .idea
+dataset/data/*

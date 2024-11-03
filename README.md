@@ -42,16 +42,77 @@ python main.py --video video/video.mp4 --configuration configuration/configurati
 ## Training
 If you want to train the model, you can run the following command:
 
-
 ```bash
-python training.py 
+python training.py --epochs 50 --batch_size 128 --num_workers 2
 ```
+
+**Arguments:**
+* `--lr` learning rate of the model.
+* `--lr_classificator` learning rate of the classificator.
+* `--min_loss` minimum loss to save the model.
+* `--epochs` number of epochs to train the model.
+* `--batch_size` batch size of the training.
+* `--result` path to save the results.
+* `--early_stopping` number of epochs to stop the training if the loss does not decrease.
+* `--num_workers` number of workers to load the data.
+* `--drive` if you run training on google colab.
+* `--checkpoint` if you want to load a checkpoint to continue the training.
+
 
 Notes:
 * Change dataset path with yours.
+* `annotations` folder contains the annotations of the dataset.
+* Download data from the following link:
+[Download Data](https://drive.google.com/file/d/1JPIhm5zvWSwYjAdr7rKhrNDF1D9fefPa/view?usp=sharing)
+
 
 ## Test
+If you want to test the model, you can run the following command:
 
+```bash
+python test.py
+```
+
+Notes:
+* Download data for testing from the following link:
+[Download Data](https://drive.google.com/file/d/1JPIhm5zvWSwYjAdr7rKhrNDF1D9fefPa/view?usp=drive_link)
+* annotations are already in the folder `annotations`.
+
+**Arguments**:
+* `--batch_size` batch size of the testing.
 
 ## Content
+The project is divided into the following parts:
+
+### Multi-Task network
+The network is used for **PAR** (Pedestrian Attribute Recognition). 
+It is composed of two files:
+* `classification_head.py` contains the class for implementing single head.
+* `multi_task_network.py` contains the class for implementing the multi-task network
+which is composed of 5 heads.
+
+### Object Detection and Re-Identification
+The object detection and re-identification tasks are handled in the `main.py` file, 
+utilizing the YOLO model for object detection and the OSNet architecture 
+for person re-identification.
+
+### Dataset
+The first step regards to creation of correct annotations
+for the dataset and remove those images that don't contain all the attributes.
+After that, the dataloaders are created using the `Dataset` class 
+in the `mivia_dataset.py` file.
+
+### Training
+In the `training.py` file, you will find the complete code structure 
+for training a multi-task neural network using GradNorm as the loss function
+
+### Testing
+In the `test.py` file, you can find the code for testing PAR model.
+
+### More Details
+more details about choosen made can be found in the `report.pdf` file.
+
+
+
+
 
