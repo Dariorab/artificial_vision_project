@@ -3,3 +3,5 @@ models/*
 configuration/*
 .idea
 dataset/data/*
+
+!**/.gitkeep
